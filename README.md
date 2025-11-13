@@ -17,13 +17,13 @@ It includes visually accurate pages and components but does not contain backend,
 
 ✨ Features
 
-✔ Fully responsive e-commerce layout
-✔ Homepage, Categories, Product Details, Cart UI, and more
-✔ Reusable and modular components
-✔ Modern grid & card-based designs
-✔ Search bar UI (static or functional depending on your implementation)
-✔ Smooth animations (optional)
-✔ Fast loading & optimized structure
+✔ Fully responsive e-commerce layout <br>
+✔ Homepage, Categories, Product Details, Cart UI, and more<br>
+✔ Reusable and modular components<br>
+✔ Modern grid & card-based designs<br>
+✔ Search bar UI (static or functional depending on your implementation)<br>
+✔ Smooth animations <br>
+✔ Fast loading & optimized structure<br>
 
 (If you want, I can customize this to match your actual features.)
 
