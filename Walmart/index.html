@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart - Shop Smarter</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/jpg"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Walmart_spark_%282025%29.svg/1065px-Walmart_spark_%282025%29.svg.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul class="nav-bar__items">
+                <li class="nav-bar__logo"><a href="index.html"><img style="margin-left: 10px;"
+                            src="https://i5.walmartimages.com/dfw/63fd9f59-14e2/9d304ce6-96de-4331-b8ec-c5191226d378/v1/spark-icon.svg"
+                            alt="Walmart Logo"></a></li>
+
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Departments</li>
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Services</li>
+                <li class="nav-bar__search-input"><input type="search"
+                        placeholder="Search everything at Walmart online and in store"><box-icon name='search-alt-2'
+                        class="nav-bar__search-icon" size="2rem"></box-icon></li>
+                <li class="d-md-none">
+                    <box-icon name='heart' color="white" size="2rem"></box-icon>
+                    <div>
+                        <p class="nav-bar__p--small font-normal">Reorder</p>
+                        <p>My Items</p>
+                    </div>
+                </li>
+                <li class="d-md-none">
+                    <a href="login.html"
+                        style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='lock-alt' color="white" size="2rem"></box-icon>
+                        <div>
+                            <p class="nav-bar__p--small font-normal">Sign In</p>
+                            <p>Account</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-bar__cart-list font-normal">
+                    <a href="cart.html"
+                        style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='cart' color="white" size="2rem"></box-icon>
+                        <p>$0.00</p>
+                        <span>0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-bar__divider-line"></div>
+            <ul class="nav-bar__items nav-bar__items-2 d-sm-none">
+                <ul class="nav-bar__location-list">
+                    <li><img style="margin-left: 10px;"
+                            src="https://i5.walmartimages.com/dfw/4ff9c6c9-ad46/k2-_0a671c38-d307-447c-835e-7904ab143c26.v1.png"
+                            alt="Phone icon" style="height: 20px;">How do you want your items?
+                        <box-icon name='chevron-down' color="white" size="2rem"></box-icon>
+                    </li>
+                    <li class="font-normal">| <box-icon name='location-plus' color="white" size="2rem"></box-icon>
+                        Sacramento, 95829 <box-icon name='home' color="white" size="2rem"></box-icon> Sacramento
+                        Supercenter</li>
+                </ul>
+                <ul class="nav-bar__category-list d-md-none">
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Grocery & Essentials</a></li>
+                    <li><a href="#">Easter</a></li>
+                    <li><a href="#">Baby Days</a></li>
+                    <li><a href="#">Black & Unlimited</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Electronics</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <img id="mainimg" src="https://i5.walmartimages.com/dfw/4ff9c6c9-499a/k2-_24f36ecb-6980-4fcc-87e0-ddc72fed60ba.v1.jpg?odnHeight=300&odnWidth=1612&odnBg=&odnDynImageQuality=70"
+            alt="Responsive Image" />
+        <div class="container">
+            <h1 class="page-title">Welcome to Walmart</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Shop our latest deals and save big on everyday
+                essentials!</p>
+
+            <div class="home-actions">
+                <a href="login.html" class="btn">Sign In</a>
+                <a href="signup.html" class="btn btn-secondary">Create Account</a>
+            </div>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Flash Deals</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1738873259-mhl-joggers-lulu-abc-667-67a519a2b11ed.jpg?crop=0.489xw:0.978xh;0.250xw,0.00321xh&resize=980:*"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Galaxy By Harvic 3-Pack Women's Fleece Jogger </h3>
+                            <div class="product-price">
+                                <span class="current-price">$31.47</span>
+                                <span class="original-price">$34.97</span>
+                                <span class="discount">10% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star-half' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(1,234)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://images-cdn.ubuy.co.in/64edfb6c878a2d171a62e0bb-carote-nonstick-pots-and-pans-set-8-pcs.jpg"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Carote Nonstick Pots and Pans Set, 8 Pcs Kitchen Cookware</h3>
+                            <div class="product-price">
+                                <span class="current-price">$64.98</span>
+                                <span class="original-price">$240.00</span>
+                                <span class="discount">73% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(3,456)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://m.media-amazon.com/images/I/81A1TDFEgLL._AC_UF894,1000_QL80_.jpg" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">KingChii Wood Pellet Grill And Smoker 456 sq.in</h3>
+                            <div class="product-price">
+                                <span class="current-price">$234.84</span>
+                                <span class="original-price">$397.70</span>
+                                <span class="discount">41% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(789)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://m.media-amazon.com/images/I/717yl8UGUyL.jpg" alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kleenex Ultra Soft Facial Tissues, 4 Cube Boxes</h3>
+                            <div class="product-price">
+                                <span class="current-price">$15.29</span>
+                                <span class="original-price">$17.99</span>
+                                <span class="discount">15% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(12,345)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Electronics</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://mahajanelectronics.com/cdn/shop/files/81OARotaN2L._SL1500_ab2fef83-736d-4b2a-999e-0512d93e65a5.jpg?v=1760153328&width=1500"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Samsung 55" 4K UHD Smart TV with HDR and Alexa Built-in</h3>
+                            <div class="product-price">
+                                <span class="current-price">$447.99</span>
+                                <span class="original-price">$599.99</span>
+                                <span class="discount">25% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star-half' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(4,321)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://www.myimaginestore.com/media/catalog/product/cache/4a48ac28cbb6e9c41470e5be5a6d3043/m/t/mtjv3_av6_geo_in.jpeg"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Apple AirPods Pro (2nd Generation) with MagSafe</h3>
+                            <div class="product-price">
+                                <span class="current-price">$199.99</span>
+                                <span class="original-price">$249.00</span>
+                                <span class="discount">20% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(8,765)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://store.sony.com.my/cdn/shop/files/PS5_2xDSWC_D_BNDL_RNDR_LT_PROD_RGB_ETCK_240206_1200x.jpg?v=1731259689"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">PlayStation 5 Console (PS5) with DualSense Wireless</h3>
+                            <div class="product-price">
+                                <span class="current-price">$499.99</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(9,876)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2dYw65-eBHCKckoAxGcaVHNltfeB0k3DPtQ&s"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Dell Inspiron 15 Laptop, Intel Core i5, 8GB RAM, 512GB SSD</h3>
+                            <div class="product-price">
+                                <span class="current-price">$649.99</span>
+                                <span class="original-price">$799.99</span>
+                                <span class="discount">19% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star-half' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(2,345)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <div class="section-header">
+                    <h2 class="section-title">Home & Kitchen</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://images-cdn.ubuy.co.in/6556a5fd45f58972ef6f57e2-ninja-foodi-8-in-1-xl-pro-air-fry.jpg"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ninja Foodi 8-in-1 Digital Air Fry Oven with 8 Functions</h3>
+                            <div class="product-price">
+                                <span class="current-price">$149.99</span>
+                                <span class="original-price">$199.99</span>
+                                <span class="discount">25% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(5,432)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeTU5Gx2UrDyUx_h37e0Qe-8t44f9AbOnLRA&s"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Instant Pot Duo Plus 9-in-1 Electric Pressure Cooker, 6 Qt</h3>
+                            <div class="product-price">
+                                <span class="current-price">$89.99</span>
+                                <span class="original-price">$119.95</span>
+                                <span class="discount">25% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star-half' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(12,345)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://m.media-amazon.com/images/I/81ycHIcQMfL._AC_UF350,350_QL80_.jpg" alt="">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Bissell CrossWave Cordless Max Wet Dry Vacuum Cleaner</h3>
+                            <div class="product-price">
+                                <span class="current-price">$299.99</span>
+                                <span class="original-price">$399.99</span>
+                                <span class="discount">25% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(3,210)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image"><img id="pimage"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0RfOnj-a68YbTo_nIv3w4FLKntlbnwm86Kw&s"
+                                alt=""></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Keurig K-Classic Coffee Maker, Single Serve K-Cup Pod</h3>
+                            <div class="product-price">
+                                <span class="current-price">$89.99</span>
+                                <span class="original-price">$129.99</span>
+                                <span class="discount">31% OFF</span>
+                            </div>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star' type='solid' color="#ffc220" size="16px"></box-icon>
+                                    <box-icon name='star-half' type='solid' color="#ffc220" size="16px"></box-icon>
+                                </div>
+                                <span class="rating-count">(7,654)</span>
+                            </div>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="home-features">
+                <div class="feature-card">
+                    <box-icon name='shopping-bag' class="feature-icon"></box-icon>
+                    <h3>Shop Deals</h3>
+                    <p>Find amazing discounts on thousands of products</p>
+                </div>
+                <div class="feature-card">
+                    <box-icon name='truck' class="feature-icon"></box-icon>
+                    <h3>Free Delivery</h3>
+                    <p>Get free shipping on orders over $35</p>
+                </div>
+                <div class="feature-card">
+                    <box-icon name='refresh' class="feature-icon"></box-icon>
+                    <h3>Easy Returns</h3>
+                    <p>Return items in-store or schedule a pickup</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer__div">
+                <a href="#">All Departments</a>
+                <a href="#">Store Directory</a>
+                <a href="#">Careers</a>
+                <a href="#">Our Company</a>
+                <a href="#">Sell on Walmart.com</a>
+                <a href="#">Help</a>
+                <a href="#">Product Recalls</a>
+                <a href="#">Acccessibility</a>
+                <a href="#">Tax Exempt Program</a>
+                <a href="#">Get the Walmart App</a>
+                <a href="#">Sign-up for Email</a>
+                <a href="#">Safety Data Sheet</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy & Security</a>
+                <a href="#">California Supply Chain Act</a>
+                <a href="#">Your Privacy Choices</a>
+                <a href="#">Notice at Collection</a>
+                <a href="#">Request My Personal Information</a>
+                <a href="#">Brand Shop Directory</a>
+                <a href="#">Pharmacy</a>
+                <a href="#">Walmart Business</a>
+                <a href="#">#IYWYK</a>
+            </div>
+            <p>&copy; 2024 Walmart. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+
+</html>

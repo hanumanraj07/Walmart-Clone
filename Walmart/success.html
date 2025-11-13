@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Walmart</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="icon" type="image/jpg" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Walmart_spark_%282025%29.svg/1065px-Walmart_spark_%282025%29.svg.png">
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+         
+        header {
+            background-color: #0071ce;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-bar__items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            color: white;
+        }
+        
+        .nav-bar__logo img {
+            height: 40px;
+        }
+        
+        .nav-bar__logo-mobile {
+            display: none;
+        }
+        
+        .nav-bar__search-input {
+            position: relative;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 20px;
+        }
+        
+        .nav-bar__search-input input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .nav-bar__search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        .nav-bar__items li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-bar__items li div p {
+            line-height: 1.2;
+        }
+        
+        .nav-bar__p--small {
+            font-size: 12px;
+        }
+        
+        .font-normal {
+            font-weight: normal;
+        }
+        
+        .nav-bar__cart-list {
+            position: relative;
+        }
+        
+        .nav-bar__cart-list span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ffc220;
+            color: #333;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .nav-bar__divider-line {
+            height: 1px;
+            background-color: rgba(255,255,255,0.3);
+            margin: 10px 0;
+        }
+        
+        .nav-bar__items-2 {
+            justify-content: space-between;
+        }
+        
+        .nav-bar__location-list, .nav-bar__category-list {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        .nav-bar__category-list li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-bar__category-list li a:hover {
+            text-decoration: underline;
+        }
+         
+        .main-content {
+            padding: 40px 0;
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         
+        .success-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 50px 40px;
+            margin: 0 auto;
+            text-align: center;
+            border-top: 5px solid #0071ce;
+        }
+        
+        .success-icon {
+            font-size: 100px;
+            color: #4CAF50;
+            margin-bottom: 25px;
+            animation: bounce 1s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .success-container h1 {
+            color: #0071ce;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .success-container > p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .order-details {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+            text-align: left;
+            border: 1px solid #eee;
+        }
+        
+        .order-details h3 {
+            margin-bottom: 20px;
+            color: #0071ce;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+        }
+        
+        .order-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .order-row span:first-child {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .order-row span:last-child {
+            font-weight: 600;
+            color: #0071ce;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #005da6;
+            transform: translateY(-2px);
+        }
+        
+        .confirmation-message {
+            background-color: #e8f5e9;
+            border: 1px solid #4CAF50;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .confirmation-message box-icon {
+            color: #4CAF50;
+            flex-shrink: 0;
+        }
+        
+        .confirmation-message p {
+            color: #2e7d32;
+            font-size: 16px;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .next-steps {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .next-steps h4 {
+            color: #0071ce;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .next-steps ul {
+            list-style-type: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .next-steps li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+        
+        .next-steps li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+         
+        footer {
+            background-color: #f5f5f5;
+            padding: 30px 0;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        .footer__div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer__div a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer__div a:hover {
+            text-decoration: underline;
+        }
+        
+        footer p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+         
+        @media (max-width: 768px) {
+            .nav-bar__logo {
+                display: none;
+            }
+            
+            .nav-bar__logo-mobile {
+                display: block;
+            }
+            
+            .nav-bar__logo-mobile img {
+                height: 40px;
+            }
+            
+            .d-md-none {
+                display: none;
+            }
+            
+            .nav-bar__search-input {
+                margin: 0 10px;
+            }
+            
+            .success-container {
+                padding: 40px 25px;
+                margin: 0 10px;
+            }
+            
+            .success-container h1 {
+                font-size: 30px;
+            }
+            
+            .success-icon {
+                font-size: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .d-sm-none {
+                display: none;
+            }
+            
+            .success-container {
+                padding: 30px 20px;
+            }
+            
+            .success-container h1 {
+                font-size: 26px;
+            }
+            
+            .order-details {
+                padding: 20px;
+            }
+            
+            .order-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul class="nav-bar__items">
+                <li class="nav-bar__logo"><a href="index.html"><img style="margin-left: 10px;" src="https://i5.walmartimages.com/dfw/63fd9f59-14e2/9d304ce6-96de-4331-b8ec-c5191226d378/v1/spark-icon.svg" alt="Walmart Logo"></a></li>
+               
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Departments</li>
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Services</li>
+                <li class="nav-bar__search-input"><input type="search"
+                        placeholder="Search everything at Walmart online and in store"><box-icon name='search-alt-2'
+                        class="nav-bar__search-icon" size="2rem"></box-icon></li>
+                <li class="d-md-none">
+                    <box-icon name='heart' color="white" size="2rem"></box-icon>
+                    <div>
+                        <p class="nav-bar__p--small font-normal">Reorder</p>
+                        <p>My Items</p>
+                    </div>
+                </li>
+                <li class="d-md-none">
+                    <a href="login.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='lock-alt' color="white" size="2rem"></box-icon>
+                        <div>
+                            <p class="nav-bar__p--small font-normal">Sign In</p>
+                            <p>Account</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-bar__cart-list font-normal">
+                    <a href="cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='cart' color="white" size="2rem"></box-icon>
+                        <p>$0.00</p>
+                        <span>0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-bar__divider-line"></div>
+            <ul class="nav-bar__items nav-bar__items-2 d-sm-none">
+                <ul class="nav-bar__location-list">
+                    <li> <li><img style="margin-left: 10px;" src="https://i5.walmartimages.com/dfw/4ff9c6c9-ad46/k2-_0a671c38-d307-447c-835e-7904ab143c26.v1.png" alt="Phone icon" style="height: 20px;">How do you want your items?
+                        <box-icon name='chevron-down' color="white" size="2rem"></box-icon>
+                    </li>
+                    <li class="font-normal">| <box-icon name='location-plus' color="white" size="2rem"></box-icon>
+                        Sacramento, 95829 <box-icon name='home' color="white" size="2rem"></box-icon> Sacramento
+                        Supercenter</li>
+                </ul>
+                <ul class="nav-bar__category-list d-md-none">
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Grocery & Essentials</a></li>
+                    <li><a href="#">Easter</a></li>
+                    <li><a href="#">Baby Days</a></li>
+                    <li><a href="#">Black & Unlimited</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Electronics</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="success-container">
+                <box-icon name='check-circle' class="success-icon"></box-icon>
+                <h1>Thank You For Your Order!</h1>
+                
+                <div class="confirmation-message">
+                    <box-icon name='check-shield' color="#4CAF50"></box-icon>
+                    <p>Your order has been placed successfully and will be shipped soon. A confirmation email has been sent to your email address.</p>
+                </div>
+                
+                <div class="order-details">
+                    <h3>Order Details</h3>
+                    <div class="order-row">
+                        <span>Order Number:</span>
+                        <span>#WM-123456789</span>
+                    </div>
+                    <div class="order-row">
+                        <span>Order Date:</span>
+                        <span>April 15, 2024</span>
+                    </div>
+                    <div class="order-row">
+                        <span>Total Amount:</span>
+                        <span>$104.17</span>
+                    </div>
+                    <div class="order-row">
+                        <span>Estimated Delivery:</span>
+                        <span>April 18-20, 2024</span>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h4>What's Next?</h4>
+                    <ul>
+                        <li>You'll receive a shipping confirmation email with tracking information</li>
+                        <li>Track your order status in your account</li>
+                        <li>Contact customer service if you have any questions</li>
+                    </ul>
+                </div>
+                
+                <a href="index.html" class="btn">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer__div">
+                <a href="#">All Departments</a>
+                <a href="#">Store Directory</a>
+                <a href="#">Careers</a>
+                <a href="#">Our Company</a>
+                <a href="#">Sell on Walmart.com</a>
+                <a href="#">Help</a>
+                <a href="#">Product Recalls</a>
+                <a href="#">Acccessibility</a>
+                <a href="#">Tax Exempt Program</a>
+                <a href="#">Get the Walmart App</a>
+                <a href="#">Sign-up for Email</a>
+                <a href="#">Safety Data Sheet</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy & Security</a>
+                <a href="#">California Supply Chain Act</a>
+                <a href="#">Your Privacy Choices</a>
+                <a href="#">Notice at Collection</a>
+                <a href="#">Request My Personal Information</a>
+                <a href="#">Brand Shop Directory</a>
+                <a href="#">Pharmacy</a>
+                <a href="#">Walmart Business</a>
+                <a href="#">#IYWYK</a>
+            </div>
+            <p>&copy; 2024 Walmart. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

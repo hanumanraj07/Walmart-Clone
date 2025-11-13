@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Walmart</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="icon" type="image/jpg" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Walmart_spark_%282025%29.svg/1065px-Walmart_spark_%282025%29.svg.png">
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+         
+        header {
+            background-color: #0071ce;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .nav-bar__items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+            color: white;
+        }
+        
+        .nav-bar__logo img {
+            height: 40px;
+        }
+        
+        .nav-bar__logo-mobile {
+            display: none;
+        }
+        
+        .nav-bar__search-input {
+            position: relative;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 20px;
+        }
+        
+        .nav-bar__search-input input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 16px;
+        }
+        
+        .nav-bar__search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        .nav-bar__items li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-bar__items li div p {
+            line-height: 1.2;
+        }
+        
+        .nav-bar__p--small {
+            font-size: 12px;
+        }
+        
+        .font-normal {
+            font-weight: normal;
+        }
+        
+        .nav-bar__cart-list {
+            position: relative;
+        }
+        
+        .nav-bar__cart-list span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ffc220;
+            color: #333;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .nav-bar__divider-line {
+            height: 1px;
+            background-color: rgba(255,255,255,0.3);
+            margin: 10px 0;
+        }
+        
+        .nav-bar__items-2 {
+            justify-content: space-between;
+        }
+        
+        .nav-bar__location-list, .nav-bar__category-list {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+        
+        .nav-bar__category-list li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-bar__category-list li a:hover {
+            text-decoration: underline;
+        }
+         
+        .main-content {
+            padding: 40px 0;
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         
+        .signup-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            margin: 0 auto;
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .signup-header h1 {
+            color: #0071ce;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .signup-header p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #0071ce;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 113, 206, 0.2);
+        }
+        
+        .name-fields {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .name-fields .form-group {
+            flex: 1;
+        }
+        
+        .password-requirements {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .password-requirements h4 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .password-requirements ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .password-requirements li {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .password-requirements li box-icon {
+            color: #0071ce;
+            font-size: 16px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 12px;
+        }
+        
+        .checkbox-group input {
+            width: 20px;
+            height: 20px;
+            accent-color: #0071ce;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .checkbox-group label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        
+        .checkbox-group a {
+            color: #0071ce;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #0071ce;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #005da6;
+        }
+        
+        .signin-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .signin-link a {
+            color: #0071ce;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .signin-link a:hover {
+            text-decoration: underline;
+        }
+         
+        .benefits-section {
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #e6f2ff;
+        }
+        
+        .benefits-section h3 {
+            color: #0071ce;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .benefits-list li {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .benefits-list li box-icon {
+            color: #0071ce;
+            font-size: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+         .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .signup-link a {
+            color: #0071ce;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+         
+        footer {
+            background-color: #f5f5f5;
+            padding: 30px 0;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        .footer__div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .footer__div a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer__div a:hover {
+            text-decoration: underline;
+        }
+        
+        footer p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+         
+        @media (max-width: 768px) {
+            .nav-bar__logo {
+                display: none;
+            }
+            
+            .nav-bar__logo-mobile {
+                display: block;
+            }
+            
+            .nav-bar__logo-mobile img {
+                height: 40px;
+            }
+            
+            .d-md-none {
+                display: none;
+            }
+            
+            .nav-bar__search-input {
+                margin: 0 10px;
+            }
+            
+            .signup-container {
+                padding: 30px 25px;
+                margin: 0 10px;
+            }
+            
+            .name-fields {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .d-sm-none {
+                display: none;
+            }
+            
+            .signup-container {
+                padding: 25px 20px;
+            }
+            
+            .signup-header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul class="nav-bar__items">
+               <li class="nav-bar__logo"><a href="index.html"><img style="margin-left: 10px;" src="https://i5.walmartimages.com/dfw/63fd9f59-14e2/9d304ce6-96de-4331-b8ec-c5191226d378/v1/spark-icon.svg" alt="Walmart Logo"></a></li>
+               
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Departments</li>
+                <li class="d-md-none"><box-icon name='grid-alt' color="white" size="2rem"></box-icon>Services</li>
+                <li class="nav-bar__search-input"><input type="search"
+                        placeholder="Search everything at Walmart online and in store"><box-icon name='search-alt-2'
+                        class="nav-bar__search-icon" size="2rem"></box-icon></li>
+                <li class="d-md-none">
+                    <box-icon name='heart' color="white" size="2rem"></box-icon>
+                    <div>
+                        <p class="nav-bar__p--small font-normal">Reorder</p>
+                        <p>My Items</p>
+                    </div>
+                </li>
+                <li class="d-md-none">
+                    <a href="login.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='lock-alt' color="white" size="2rem"></box-icon>
+                        <div>
+                            <p class="nav-bar__p--small font-normal">Sign In</p>
+                            <p>Account</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-bar__cart-list font-normal">
+                    <a href="cart.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                        <box-icon name='cart' color="white" size="2rem"></box-icon>
+                        <p>$0.00</p>
+                        <span>0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-bar__divider-line"></div>
+            <ul class="nav-bar__items nav-bar__items-2 d-sm-none">
+                <ul class="nav-bar__location-list">
+                    <li> <li><img style="margin-left: 10px;" src="https://i5.walmartimages.com/dfw/4ff9c6c9-ad46/k2-_0a671c38-d307-447c-835e-7904ab143c26.v1.png" alt="Phone icon" style="height: 20px;">How do you want your items?
+                        <box-icon name='chevron-down' color="white" size="2rem"></box-icon>
+                    </li>
+                    <li class="font-normal">| <box-icon name='location-plus' color="white" size="2rem"></box-icon>
+                        Sacramento, 95829 <box-icon name='home' color="white" size="2rem"></box-icon> Sacramento
+                        Supercenter</li>
+                </ul>
+                <ul class="nav-bar__category-list d-md-none">
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Grocery & Essentials</a></li>
+                    <li><a href="#">Easter</a></li>
+                    <li><a href="#">Baby Days</a></li>
+                    <li><a href="#">Black & Unlimited</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Electronics</a></li>
+                </ul>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="signup-container">
+                <div class="signup-header">
+                    <h1>Create an account</h1>
+                    <p>Sign up to enjoy a faster checkout and manage your orders</p>
+                </div>
+                
+                <form action="index.html" method="get">
+                    <div class="name-fields">
+                        <div class="form-group">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" class="form-control" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" class="form-control" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                        
+                        <div class="password-requirements">
+                            <h4>Password Requirements:</h4>
+                            <ul>
+                                <li><box-icon name='check' size="16px"></box-icon> At least 8 characters long</li>
+                                <li><box-icon name='check' size="16px"></box-icon> Contains both letters and numbers</li>
+                                <li><box-icon name='check' size="16px"></box-icon> Includes uppercase and lowercase letters</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="promotions" name="promotions">
+                        <label for="promotions">
+                            Send me emails with tips, trends, promotions and more from Walmart (you can unsubscribe at any time)
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn">Create account</button>
+                     <div class="signup-link">
+                        Already have an account? <a href="login.html">Login</a>
+                    </div>
+                    
+                    <div class="benefits-section">
+                        <h3>Benefits of creating an account:</h3>
+                        <ul class="benefits-list">
+                            <li><box-icon name='check-circle' size="18px"></box-icon> Faster checkout with saved information</li>
+                            <li><box-icon name='check-circle' size="18px"></box-icon> Track your orders and delivery status</li>
+                            <li><box-icon name='check-circle' size="18px"></box-icon> Create and manage your shopping lists</li>
+                            <li><box-icon name='check-circle' size="18px"></box-icon> Access exclusive deals and promotions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signin-link">
+                        Already have an account? <a href="login.html">Sign in</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer__div">
+                <a href="#">All Departments</a>
+                <a href="#">Store Directory</a>
+                <a href="#">Careers</a>
+                <a href="#">Our Company</a>
+                <a href="#">Sell on Walmart.com</a>
+                <a href="#">Help</a>
+                <a href="#">Product Recalls</a>
+                <a href="#">Acccessibility</a>
+                <a href="#">Tax Exempt Program</a>
+                <a href="#">Get the Walmart App</a>
+                <a href="#">Sign-up for Email</a>
+                <a href="#">Safety Data Sheet</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy & Security</a>
+                <a href="#">California Supply Chain Act</a>
+                <a href="#">Your Privacy Choices</a>
+                <a href="#">Notice at Collection</a>
+                <a href="#">Request My Personal Information</a>
+                <a href="#">Brand Shop Directory</a>
+                <a href="#">Pharmacy</a>
+                <a href="#">Walmart Business</a>
+                <a href="#">#IYWYK</a>
+            </div>
+            <p>&copy; 2024 Walmart. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
