@@ -1,5 +1,7 @@
 YouTube Video Link: https://youtu.be/apANGXWOMtI?si=l3ODNWSpKTDopI_x
 
+LinkedIn Profile: www.linkedin.com/in/hanuman-rajpurohit-203880383
+
 Walmart Website Clone – E-Commerce UI (Educational Project)
 
 A fully responsive, modern clone of the Walmart e-commerce website. Designed for learning, practice, and portfolio showcasing, this project recreates the layout, shopping pages, product grids, and overall user experience of Walmart’s online store.
