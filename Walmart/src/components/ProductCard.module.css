@@ -1,0 +1,308 @@
+.card {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Image Container */
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background-color: var(--color-bg-light);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card__image {
+  transform: scale(1.04);
+}
+
+/* Badges */
+.card__badge {
+  position: absolute;
+  top: var(--spacing-sm);
+  left: var(--spacing-sm);
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card__badge--limited {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.card__badge--new {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+/* Wishlist Button */
+.card__wishlist {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.card:hover .card__wishlist {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card__wishlist:hover {
+  background-color: var(--color-error);
+}
+
+.card__wishlist:hover box-icon {
+  color: var(--color-white);
+}
+
+.card__wishlist--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card__wishlist--active box-icon {
+  color: var(--color-error);
+  fill: var(--color-error);
+}
+
+.card__wishlist:active {
+  transform: scale(0.9);
+}
+
+/* Add to Cart Overlay */
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-md);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.card:hover .card__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card__add-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.card__add-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.card__add-btn:active {
+  transform: scale(0.97);
+}
+
+/* Content */
+.card__content {
+  padding: var(--spacing-md);
+}
+
+.card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+  min-height: 2.5em;
+}
+
+.card__title:hover {
+  color: var(--color-primary);
+}
+
+/* Price */
+.card__price {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.card__price-current {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.card__price-original {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.card__price-discount {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  background-color: var(--color-error);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Rating */
+.card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.card__stars {
+  display: flex;
+  gap: 1px;
+}
+
+.card__star {
+  color: var(--color-border);
+}
+
+.card__star--filled {
+  color: var(--color-secondary);
+}
+
+.card__star--half {
+  position: relative;
+  color: var(--color-border);
+}
+
+.card__star--half::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.card__star--half-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-secondary);
+}
+
+.card__rating-count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Countdown Timer */
+.card__countdown {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-bg-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Skeleton State */
+.card--skeleton .card__image-wrapper {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-light) 25%,
+    var(--color-bg-dark) 50%,
+    var(--color-bg-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.card--skeleton .card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.card--skeleton .skeleton-line {
+  height: 14px;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-light) 25%,
+    var(--color-bg-dark) 50%,
+    var(--color-bg-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.card--skeleton .skeleton-line--title {
+  width: 80%;
+}
+
+.card--skeleton .skeleton-line--price {
+  width: 40%;
+  height: 20px;
+}
+
+.card--skeleton .skeleton-line--rating {
+  width: 60%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
